@@ -17,3 +17,7 @@ Tech stacks used:
     NextJS
     TypeScript
     Tailwindcss
+    Clerk
+    Uploadthing
+    Mongoose
+    Svix
