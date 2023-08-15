@@ -18,6 +18,7 @@ Tech stacks used:
     TypeScript
     Tailwindcss
     Clerk
+    Clerk/themes
     Uploadthing
     Mongoose
     Svix
