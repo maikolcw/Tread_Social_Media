@@ -22,3 +22,4 @@ Tech stacks used:
     Uploadthing
     Mongoose
     Svix
+    Shadcdn-ui
