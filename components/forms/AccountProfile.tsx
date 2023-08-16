@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
+import { usePathname, useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserValidation } from "@/lib/validations/user";
 import Image from "next/image";
@@ -12,6 +13,7 @@ import { ChangeEvent, useState } from "react";
 import { Textarea } from "../ui/textarea";
 import { isBase64Image } from "@/lib/utils";
 import { useUploadThing } from "@/lib/uploadthing";
+import { updateUser } from "@/lib/actions/user.actions";
 
 interface Props {
     user: {
@@ -26,7 +28,8 @@ interface Props {
 }
 
 const AccountProfile = ({ user, btnTitle }: Props) => {
-    
+    const router = useRouter();
+    const pathname = usePathname();
     const { startUpload } = useUploadThing("media");
 
     const [files, setFiles] = useState<File[]>([]);
@@ -51,6 +54,21 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
             if (imgRes && imgRes[0].fileUrl) {
                 values.profile_photo = imgRes[0].fileUrl;
             }
+        }
+
+        await updateUser({
+            name: values.name,
+            path: pathname,
+            username: values.username,
+            userId: user.id,
+            bio: values.bio,
+            image: values.profile_photo,
+        });
+
+        if (pathname === "/profile/edit") {
+            router.back();
+        } else {
+            router.push("/");
         }
 
     };
