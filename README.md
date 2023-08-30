@@ -31,8 +31,10 @@ Tech stacks used:
     TypeScript
     Tailwindcss
     Clerk
+    React-hook-form
     Mongoose
     Svix
-    Shadcdn-ui
+    Shadcn-ui
+    Zod
     Uploadthing
 
