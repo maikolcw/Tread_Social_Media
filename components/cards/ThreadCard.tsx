@@ -83,7 +83,7 @@ function ThreadCard({
                                         alt='heart'
                                         width={24}
                                         height={24}
-                                        className='cursor-pointer object-contain'
+                                        className='cursor-pointer object-contain hover:drop-shadow-[2px_2px_3px_rgba(255,255,255,1)]'
                                     />
                                 </Link>
                                 <Image
