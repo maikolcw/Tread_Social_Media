@@ -1,18 +1,28 @@
-"use client"
+"use client";
 
-import { useForm } from "react-hook-form";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
-import { usePathname, useRouter } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { UserValidation } from "@/lib/validations/user";
-import Image from "next/image";
 import * as z from "zod";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { usePathname, useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
-import { Textarea } from "../ui/textarea";
-import { isBase64Image } from "@/lib/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+
 import { useUploadThing } from "@/lib/uploadthing";
+import { isBase64Image } from "@/lib/utils";
+
+import { UserValidation } from "@/lib/validations/user";
 import { updateUser } from "@/lib/actions/user.actions";
 
 interface Props {
@@ -70,7 +80,6 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
         } else {
             router.push("/");
         }
-
     };
 
     const handleImage = (
@@ -95,6 +104,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
             fileReader.readAsDataURL(file);
         }
     };
+
     return (
         <Form {...form}>
             <form
@@ -205,6 +215,6 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
             </form>
         </Form>
     );
-}
+};
 
 export default AccountProfile;
