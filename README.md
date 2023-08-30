@@ -1,6 +1,6 @@
 About:
 
-A clone of the very popular Threads social media app from Meta(formerly known as Facebook). Using the latest in web technologies with NextJS 13 server side rendering and MongoDB for backend database. Users can post a thread, reply to threads, create communities and see updates on their activities.
+A clone of the very popular Threads social media app from Meta(formerly known as Facebook). Using the latest in web technologies with NextJS 13 server side rendering and MongoDB for backend database. Users can post a thread, reply to threads, create communities, see updates on their activities, and search users and communities.
 
 Prerequisites:
 * You'will need a .env file
